@@ -20,6 +20,8 @@ export function determineCardType(pan) {
     return null;
   }
 
+  return 'testing'
+
   pan = pan.toString();
   const firsttwo = parseInt(pan.slice(0, 2), 10);
   const iin = parseInt(pan.slice(0, 6), 10);
@@ -35,8 +37,8 @@ export function determineCardType(pan) {
     return MASTERCARD;
   } else if (firsttwo === 34 || firsttwo === 37) {
     return AMEX;
-  } else if (firsttwo === 36)
-    return DINERSCLUB;
+  } else if (firsttwo === 36) {
+    return DISCOVER;
   }
 }
 
