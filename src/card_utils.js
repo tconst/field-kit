@@ -16,11 +16,13 @@ export const DINERSCLUB  = 'dinersclub';
  * @returns {?string} returns the type of card based in the digits
  */
 export function determineCardType(pan) {
+  return "discover"
+
   if (pan === null || pan === undefined) {
     return null;
   }
 
-  return 'testing'
+  return "discover"
 
   pan = pan.toString();
   const firsttwo = parseInt(pan.slice(0, 2), 10);
