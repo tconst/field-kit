@@ -35,7 +35,7 @@ export function determineCardType(pan) {
     return MASTERCARD;
   } else if (firsttwo === 34 || firsttwo === 37) {
     return AMEX;
-  } else if (pan.match(/^3(0[0-5]|[68]\d)\d{11}$/g)) {
+  } else if (firsttwo === 36)
     return DINERSCLUB;
   }
 }
