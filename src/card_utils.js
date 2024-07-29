@@ -6,6 +6,7 @@ export const DISCOVER    = 'discover';
 export const JCB         = 'jcb';
 export const MASTERCARD  = 'mastercard';
 export const VISA        = 'visa';
+export const DINERSCLUB  = 'dinersclub';
 
 /**
  * Pass in a credit card number and it'll return the
@@ -34,6 +35,8 @@ export function determineCardType(pan) {
     return MASTERCARD;
   } else if (firsttwo === 34 || firsttwo === 37) {
     return AMEX;
+  } else if (pan.match(/^3(0[0-5]|[68]\d)\d{11}$/g)) {
+    return DINERSCLUB;
   }
 }
 
@@ -73,6 +76,8 @@ export function validCardLength(pan) {
       return pan.length === 15 || pan.length === 16;
     case AMEX:
       return pan.length === 15;
+    case DINERSCLUB:
+      return pan.length === 14 || pan.length === 16;
     default:
       return false;
   }
